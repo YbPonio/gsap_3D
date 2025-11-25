@@ -13,7 +13,7 @@
 
         <Suspense>
           <Environment preset="sunset" />
-          <primitive object="{model}" ref="houseRef" />
+          <primitive :object="model" ref="houseRef" />
         </Suspense>
 
         <ContactShadows :opacity="0.4" :blur="2.5" />
@@ -43,7 +43,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 let houseRef = shallowRef(null);
 
-let { scene: model } = await useGLTF("@/assets/GLB/autumn_house.glb");
+let { scene: model } = await useGLTF("/autumn_house.glb");
 
 onMounted(() => {
   if (houseRef.value) {
